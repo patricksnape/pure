@@ -5,20 +5,20 @@
                 <hgroup>
                     <h1 class="brand-main"><a href="/">{{ SITENAME }}</a></h1>
                     <p class="tagline">{{ TAGLINE }}</p>
-                {% for title, link in MENUITEMS %}
+                    {% for title, link in MENUITEMS %}
                     <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
-                {% endfor %}
-				{% if DISPLAY_PAGES_ON_MENU %}
-				        {% for page in PAGES %}
-				            <p class="links"><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></p>
-				        {% endfor %}
-				    {% endif %}
+                    {% endfor %}
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for page in pages %}
+                    <p class="links"><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></p>
+                    {% endfor %}
+                    {% endif %}
                     <p class="social">
-                {% for title, link in SOCIAL %}
+                        {% for icon_class, link in SOCIAL %}
                         <a href="{{ link }}">
-                            <i class="fa fa-{{ title }} fa-3x"></i>
+                            <i class="{{ icon_class }}"></i>
                         </a>
-                {% endfor %}
+                        {% endfor %}
                     <p>
                 </hgroup>
             </header>
